@@ -1,17 +1,7 @@
-terraform {
-  required_providers {
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "~> 3.0.1"
-    }
-  }
-}
-
-provider "docker" {}
-
 # Crear una imagen de Nginx
 resource "docker_image" "nginx" {
-  name = "nginx:latest"
+#   name = "nginx:latest"
+  name = var.imagen
 }
 
 # Crear un contenedor a partir de la imagen
